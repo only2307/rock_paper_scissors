@@ -10,47 +10,78 @@ function playRound(playerSelection, computerSelection) {
     switch(playerSelection) {
         case 'rock':
             if (computerSelection == 'rock') {
-                return 'The result is draw';
+                console.log('The result is draw');
+                return 0;
             }
             else if (computerSelection == 'scissors') {
-                return 'You Win! Rock beats Scissors';
+                console.log('You Win! Rock beats Scissors');
+                return 1;
             }
             else {
-                return 'You Lose! Paper beats Rock';
+                console.log('You Lose! Paper beats Rock');
+                return -1;
             }
             break;
         case 'paper':
             if (computerSelection == 'paper') {
-                return 'The result is draw';
-                break;
+                console.log('The result is draw');
+                return 0;
             }
             else if (computerSelection == 'rock') {
-                return 'You Win! Rock beats Paper';
-                break;
+                console.log('You Win! Paper beats Rock');
+                return 1;
             }
             else {
-                return 'You Lose! Scissors beats Paper';
+                console.log('You Lose! Scissors beats Paper');
+                return -1
             }
             break;
         case 'scissors':
             if (computerSelection == 'scissors') {
-                return 'The result is draw';
-                break;
+                console.log('The result is draw');
+                return 0;
             }
             else if (computerSelection == 'paper') {
-                return 'You Win! Scissors beats Paper';
-                break;
+                console.log('You Win! Scissors beats Paper');
+                return 1;
             }
             else {
-                return 'You Lose! Rock beats Scissors';
+                console.log('You Lose! Rock beats Scissors');
+                return -1;
             }
             break;
         default:
             return 'Invalid Input! Run and Type again';
     }
 }
-//playerSelection = prompt('Your selection is: ');
-const playerSelection = 'Rock';
-const computerSelection = computerPlay();
-console.log(computerSelection);
-console.log(playRound(playerSelection, computerSelection)); 
+
+function game() {
+    let playerWin = 0, computerWin = 0;
+    for (let i = 0; i < 5; i++) {
+        const playerSelection = prompt('Your selection is: ');
+        const computerSelection = computerPlay();
+        console.log(computerSelection);
+        let result = playRound(playerSelection, computerSelection);
+        console.log(result); 
+        if (result == 1) {
+            playerWin++;
+        }
+        else if (result == -1) {
+            computerWin++;
+        }
+        else {
+            continue;
+        }
+    }
+    if (playerWin > computerWin) {
+        console.log('You win!');
+    }
+    else if (playerWin < computerWin) {
+        console.log('You lose!');
+    }
+    else {
+        console.log("It's draw!")
+    }
+}
+
+game();
