@@ -1,0 +1,57 @@
+img{
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+.button {
+    margin: 50px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: #B4C6A6;
+}
+
+.button:hover {
+    transform: scale(1.1);
+    border-color: #FFCA03;
+}
+
+.score {
+    display: flex;
+    font-size: 30px;
+}
+
+#player, #computer {
+    margin: 50px;
+}
+
+.output {
+    font-size: 45px;
+}
+
+a {
+    text-decoration: none;
+    color: orangered;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: lightcyan;
+}
+
+footer {
+    background-color: #8A8635;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
